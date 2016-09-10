@@ -1,3 +1,3 @@
-the power lies in 
-  the way you can define your decorators (your own logic functions)
-  the way checking permissions cascade to the namespace of that permission
+Benefits:
+- you're in control - you define your decorators and the actual logic
+- the way checking permissions cascade to the namespace
