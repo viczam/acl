@@ -1,5 +1,5 @@
 {
-  "name": "viczam-acl",
+  "name": "acl.js",
   "version": "0.1.0",
   "description": "An ACL for javascript",
   "main": "dist/index.js",

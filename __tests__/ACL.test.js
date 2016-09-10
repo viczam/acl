@@ -43,7 +43,7 @@ describe('ACL', () => {
     expect(acl.check('vault', { user: { role: 'thief' } })).toBeFalsy();
   });
 
-  it('should work with hackers', () => {
+  it('should work against hackers', () => {
     acl.define('website.adminArea', allowRoles(['admin']));
     acl.define('website.public', () => true);
     acl.define('website', ({ user }) => (user.role === 'hacker' ? user.isWhiteHat : true));
