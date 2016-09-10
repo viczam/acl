@@ -12,12 +12,12 @@ export default class ACL {
       has(this.permissionsTree, permission) &&
       (typeof get(this.permissionsTree, permission) === 'function')
     ) {
-      throw new Error(`Permission ${permission} already registered!`);
+      throw new Error(`Permission "${permission}" already registered!`);
     }
 
     if (typeof check !== 'function') {
       throw new Error(
-        `Permission ${permission} needs to be registered with a check function
+        `Permission "${permission}" needs to be registered with a check function
         (got a ${typeof check} instead)!`
       );
     }
