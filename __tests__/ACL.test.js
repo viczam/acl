@@ -21,25 +21,25 @@ describe('ACL', () => {
     expect(acl.check('ns.permission')).toBeFalsy();
   });
 
+  // it('should work with roles', () => {
+  //   acl.define('vault', allowRoles(['owner']));
+  //   acl.define('vault', denyRoles(['thief']));
+
+  //   const owner = {
+  //     role: 'owner',
+  //   };
+
+  //   const thief = {
+  //     role: 'thief',
+  //   };
+
+  //   expect(acl.check('vault', { user: owner })).toBeTruthy();
+  //   expect(acl.check('vault', { user: thief })).toBeFalsy();
+  // });
+
   it('should work with roles', () => {
-    acl.define('vault', allowRoles(['owner']));
-    acl.define('value', denyRoles(['thief']));
-
-    const owner = {
-      role: 'owner',
-    };
-
-    const thief = {
-      role: 'thief',
-    };
-
-    expect(acl.check('vault', { user: owner })).toBeTruthy();
-    expect(acl.check('vault', { user: thief })).toBeFalsy();
-  });
-
-  it('should work with composable roles', () => {
     acl.define('vault', denyRoles(['thief'], allowRoles(['owner'])));
-    expect(acl.check('vault', { user: { role: 'owner' } })).toBeTruthy();
+    expect(acl.check('vault', { user: { roles: ['owner'] } })).toBeTruthy();
     expect(acl.check('vault', { user: { role: 'thief' } })).toBeFalsy();
   });
 
