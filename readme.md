@@ -1,3 +1,5 @@
+Deprecated. Look at [makeen-security](https://github.com/makeen-project/makeen/blob/master/packages/makeen-security/readme.md) for a better solution.
+
 ## Install
 
 ```
